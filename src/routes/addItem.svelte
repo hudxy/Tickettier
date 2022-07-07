@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Add Item</title>
 </svelte:head>
 <div class="box">
 	<RightBar />

@@ -1,21 +1,21 @@
 <script>
 	import { onMount } from 'svelte';
-    import {window_width} from './stores.js'
+	import { window_width } from './stores.js';
 	let h = 0;
 	let w = 0;
 	onMount(() => {
 		h = window.innerHeight;
-        window_width.update(n => window.innerWidth);
+		window_width.update((n) => window.innerWidth);
 		// w = window.innerWidth * 0.15;
 	});
 
 	function updateWidth() {
-		window_width.update(n => window.innerWidth)
-        h = window.innerHeight;
+		window_width.update((n) => window.innerWidth);
+		h = window.innerHeight;
 	}
-    window_width.subscribe(value => {
-        w = value * 0.15;
-    });
+	window_width.subscribe((value) => {
+		w = value * 0.15;
+	});
 </script>
 
 <svelte:window on:resize={updateWidth} />
@@ -36,7 +36,7 @@
 		border-right: 5px solid rgba(0, 0, 0, 0.2);
 		border-bottom: 5px solid rgba(0, 0, 0, 0.2);
 		background-color: rgb(214, 214, 209);
-        float: left;
+		float: left;
 	}
 	button {
 		margin-left: 10%;

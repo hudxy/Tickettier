@@ -1,12 +1,14 @@
 <script>
 	import { onMount } from 'svelte';
 	import { window_width } from './stores.js';
+	import Modal from './Modal.svelte';
 	let h = 0;
 	let w = 0;
+	let modal;
+
 	onMount(() => {
 		h = window.innerHeight;
 		window_width.update((n) => window.innerWidth);
-		// w = window.innerWidth * 0.15;
 	});
 
 	function updateWidth() {
@@ -24,8 +26,27 @@
 	<a href="/">
 		<img class="home_img" src="/favicon.png" alt="home" />
 	</a>
-	<button><a href="/addItem">New Item + </a></button>
+	<button on:click={() => modal.show()}>New Item + </button>
 </div>
+<Modal bind:this={modal}>
+	<h2>New Item</h2>
+	<label for="item">Item Type:</label>
+	<select name="item" id="item">
+		<option value="bug">Bug</option>
+		<option value="user_story">User Story</option>
+		<option value="epic">Epic</option>
+		<option value="task">Task</option>
+	</select>
+	<br />
+	<br />
+	<label for="title">Title: </label>
+	<input type="text" name="title" id="title" />
+	<br />
+	<br />
+	<p>Description:</p>
+	<textarea style:width="75%" name="desciption" id="description" />
+	<button on:click={() => modal.hide()}>Close</button>
+</Modal>
 
 <style>
 	div {

@@ -1,5 +1,4 @@
 <script>
-	import Card from '../Card.svelte';
 	import RightBar from '../RightBar.svelte';
 </script>
 

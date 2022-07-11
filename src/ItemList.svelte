@@ -34,7 +34,8 @@
 	{#each data as item}
 		<li style="width: {w}px;" on:click={() => edit(item)}>
 			<div class="box">
-				<span class="title">{item.title}</span>
+                <div class="{item.item} item"></div>
+				<span class="title">{convertValue(item.item)}: {item.title}</span>
 				<span class="status">Status: {convertValue(item.status)}</span>
 			</div>
 		</li>
@@ -76,4 +77,20 @@
 		padding: 5px;
 		font-size: 16px;
 	}
+    .bug {
+        background-color: red;
+    }
+    .user_story {
+        background-color: cyan;
+    }
+    .task {
+        background-color: yellow;
+    }
+    .epic {
+        background-color: rgb(255, 10, 255);
+    }
+    .item {
+        width: 10px;
+        height: 30px;
+    }
 </style>

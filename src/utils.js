@@ -26,7 +26,7 @@ export const fake_data = [
 		description: 'Make this app work.'
 	},
 	{
-		item: 'task',
+		item: 'epic',
 		title: 'Start work',
 		status: 'new',
 		description: 'Work on the app.'

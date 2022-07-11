@@ -1,6 +1,7 @@
 <script>
 	import Modal from './Modal.svelte';
-	import { window_width, fake_data } from './stores.js';
+	import { window_width } from './stores.js';
+	import { fake_data, convertValue } from './utils.js';
 
 	let data = fake_data;
 	let w = 0;
@@ -26,7 +27,10 @@
 <ul>
 	{#each data as item}
 		<li style="width: {w}px;" on:click={() => edit(item)}>
-			{item.title}
+			<div class="box">
+				<span class="title">{item.title}</span>
+				<span class="status">Status: {convertValue(item.status)}</span>
+			</div>
 		</li>
 	{/each}
 </ul>
@@ -52,5 +56,18 @@
 		border-radius: 2px;
 		box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 		padding: 1em;
+	}
+
+	.box {
+		display: flex;
+	}
+	.title {
+		padding: 5px;
+		font-size: 16px;
+		font-weight: 900;
+	}
+	.status {
+		padding: 5px;
+		font-size: 16px;
 	}
 </style>

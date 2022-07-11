@@ -1,14 +1,19 @@
 <script>
-	import { compute_slots, get_slot_changes } from 'svelte/internal';
-
 	let shown = false;
 	let slotItem;
 	let slotStatus;
+	let modal;
 	export function show() {
 		shown = true;
 	}
 	export function hide() {
 		shown = false;
+	}
+
+	function handleClickOff(e) {
+		if (!modal.contains(e.target)) {
+			hide();
+		}
 	}
 </script>
 
@@ -21,8 +26,8 @@
 />
 
 {#if shown}
-	<div class="modal-wrapper">
-		<div class="modal">
+	<div class="modal-wrapper" on:click={handleClickOff}>
+		<div class="modal" bind:this={modal}>
 			<span class="close" on:click={() => hide()}>&times;</span>
 			<h2>New Item</h2>
 

@@ -8,5 +8,11 @@ export const fake_data = [
 		title: 'fix app',
 		status: 'active',
 		description: 'Make this app work.'
+	},
+    {
+		item: 'task',
+		title: 'Start work',
+		status: 'new',
+		description: 'Work on the app.'
 	}
 ];

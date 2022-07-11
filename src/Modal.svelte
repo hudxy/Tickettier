@@ -2,6 +2,9 @@
 	let shown = false;
 	let slotItem;
 	let slotStatus;
+	/**
+	 * @type {HTMLDivElement}
+	 */
 	let modal;
 	export function show() {
 		shown = true;

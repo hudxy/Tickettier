@@ -4,6 +4,9 @@
 	import Modal from './Modal.svelte';
 	let h = 0;
 	let w = 0;
+	/**
+	 * @type {Modal}
+	 */
 	let modal;
 
 	onMount(() => {

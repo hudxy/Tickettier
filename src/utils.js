@@ -1,3 +1,6 @@
+/**
+ * @param {string} item
+ */
 export function convertValue(item) {
 	switch (item) {
 		case 'bug':

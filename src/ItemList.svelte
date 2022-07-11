@@ -5,6 +5,9 @@
 
 	let data = fake_data;
 	let w = 0;
+	/**
+	 * @type {Modal}
+	 */
 	let modal;
 	let title = '';
 	let item = '';
@@ -15,6 +18,9 @@
 		w = value * 0.85;
 	});
 
+	/**
+	 * @param {{ item: any; title: any; status: any; description: any; }} i
+	 */
 	function edit(i) {
 		title = i.title;
 		item = i.item;
